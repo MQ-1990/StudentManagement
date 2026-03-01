@@ -3,8 +3,7 @@
 Đây là dự án ứng dụng Web Quản Lý Sinh Viên cơ bản bằng Java Spring Boot, được xây dựng trong khuôn khổ chuỗi bài thực hành Lab 1-5. Dự án tích hợp các công nghệ như Spring Data JPA, Thymeleaf, giao diện Glassmorphism CSS hiện đại, và được Docker hóa để triển khai trên Render.com kết hợp PostgreSQL (Neon.tech).
 
 ## 👥 Danh sách nhóm
-1. **[Điền tên Sinh Viên 1]** - Mã SV: `[Điền MSSV]`
-2. **[Điền tên Sinh Viên 2]** - Mã SV: `[Điền MSSV]` (Nếu có)
+1. Trần Minh Quang - 2212757
 
 ---
 
