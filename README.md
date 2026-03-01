@@ -10,7 +10,7 @@
 
 ## 🚀 Public URL (Web Service)
 Ứng dụng đã được triển khai trực tiếp trên mạng Internet (Render.com + Neon.tech):
-👉 **[Nhập đường link rút gọn .onrender.com vào đây]**
+👉 **[https://studentmanagement-1-j7q2.onrender.com/students](https://studentmanagement-1-j7q2.onrender.com/students)**
 
 ---
 
@@ -63,10 +63,10 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ## 📸 Ảnh Chụp Giao Diện Các Module (Lab 4 Screenshots)
 
 **1. Màn hình Danh sách Sinh Viên (Read)**
-![Danh sách Sinh Vien](chèn_hình_1.png)
+![Danh sách Sinh Viên](docs/student_list.png)
 
 **2. Màn hình Chi Tiết (Read Detail) & Xác nhận Xóa (Delete)** 
-![Chi Tiết Sinh Vien](chèn_hình_2.png)
+![Chi Tiết Sinh Viên](docs/student_detail.png)
 
 **3. Màn hình Thêm Mới / Chỉnh Sửa Form nhập liệu (Create & Update)**
-![Form Sinh Vien](chèn_hình_3.png)
+![Form Sinh Viên](docs/student_form.png)
