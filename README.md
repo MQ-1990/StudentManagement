@@ -61,6 +61,8 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ## 📸 Ảnh Chụp Giao Diện Các Module (Lab 4 Screenshots)
 
 **1. Màn hình Danh sách Sinh Viên (Read)**
+![Danh sách Sinh Viên](docs/student_list_empty.png)
+
 ![Danh sách Sinh Viên](docs/student_list.png)
 
 **2. Màn hình Chi Tiết (Read Detail) & Xác nhận Xóa (Delete)** 
@@ -68,3 +70,5 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 
 **3. Màn hình Thêm Mới / Chỉnh Sửa Form nhập liệu (Create & Update)**
 ![Form Sinh Viên](docs/student_form.png)
+
+![Form Sinh Viên](docs/student_form1.png)
