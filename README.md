@@ -39,8 +39,10 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ## 📝 Trả Lời Câu Hỏi Lý Thuyết (Lab Theory Answers)
 
 ### 1. Dữ liệu lớn
-(Chèn hình ảnh dữ liệu khủng tại đây)
-![Placeholder - Hình ảnh minh họa Dữ liệu lớn]()
+- **Thao tác:** Tiến hành sử dụng chức năng `Thêm Mới` trên giao diện web (hoặc script SQL) để nạp thêm 10+ dòng dữ liệu sinh viên ngẫu nhiên vào hệ thống.
+- **Kết quả:** Giao diện phân trang/danh sách hiển thị đầy đủ, mượt mà. Hệ thống PostgreSQL (Neon.tech) lưu trữ ổn định không gặp tình trạng thắt nút cổ chai (bottleneck) với lượng dữ liệu nhỏ này.
+- **Minh chứng:** *(Anh/chị có thể thay hình ảnh dưới đây bằng ảnh chụp màn hình máy mình lúc có nhiều dữ liệu hơn)*
+![Minh họa Dữ liệu lớn](docs/student_list.png)
 
 ### 2. Ràng buộc Khóa Chính (Primary Key)
 - **Thao tác:** Insert một sinh viên với ID = 1 (đã tồn tại).
