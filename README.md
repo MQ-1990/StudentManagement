@@ -39,6 +39,7 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ## 📝 Trả Lời Câu Hỏi Lý Thuyết (Lab Theory Answers)
 
 ### 1. Dữ liệu lớn
+![Dữ liệu lớn](docs/lab1_big_data.png)
 
 ### 2. Ràng buộc Khóa Chính (Primary Key)
 - **Thao tác:** Insert một sinh viên với ID = 1 (đã tồn tại).
