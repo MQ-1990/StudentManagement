@@ -69,6 +69,8 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ![Chi Tiết Sinh Viên](docs/student_detail.png)
 
 **3. Màn hình Thêm Mới / Chỉnh Sửa Form nhập liệu (Create & Update)**
+- **Thêm Mới:**
 ![Form Sinh Viên](docs/student_form.png)
 
 ![Form Sinh Viên](docs/student_form1.png)
+- **Chỉnh Sửa:**
