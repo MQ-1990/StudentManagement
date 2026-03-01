@@ -49,7 +49,7 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 ### 3. Toàn vẹn dữ liệu (Constraints)
 - **Thao tác:** Insert một sinh viên với ID = 999 và name = NULL.
 - **Kết quả:** Database CHO PHÉP (Success).
-- **Giải thích:** Do lúc tạo bảng (bằng tool mock data hoặc Entity chưa định nghĩa Annotation kiểm duyệt), cột `name` chưa được thiết lập ràng buộc NOT NULL.
+- **Giải thích:** Do lúc tạo bảng, cột `name` chưa được thiết lập ràng buộc NOT NULL.
 - **Hậu quả khi code Java:** Đây là vấn đề nghiêm trọng!. Khi ứng dụng đọc bản ghi này lên, giá trị `student.getName()` sẽ là `null`. Nếu vòng lặp code không kiểm tra kỹ (ví dụ gọi hàm `student.getName().toUpperCase()`), chương trình sẽ bị Crash ngay lập tức với lỗi rò rỉ bộ nhớ `NullPointerException`. Điều này cho thấy tầm quan trọng của việc thiết lập ràng buộc chặt chẽ dữ liệu rác ngay từ tầng Database.
 
 ### 4. Cấu hình Hibernate
