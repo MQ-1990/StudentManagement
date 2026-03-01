@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sinh viên</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Thông tin chi tiết sinh viên</h1>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto; margin-top: 40px;">
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px; font-size: 1.1rem;">
+                <div
+                    style="display: flex; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; align-items: center;">
+                    <strong
+                        style="width: 120px; color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">ID:</strong>
+                    <span th:text="${student.id}"
+                        style="font-weight: 600; font-size: 1.2rem; background: var(--border); padding: 4px 12px; border-radius: 8px;"></span>
+                </div>
+                <div
+                    style="display: flex; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; align-items: center;">
+                    <strong
+                        style="width: 120px; color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Họ
+                        và tên:</strong>
+                    <span th:text="${student.name}" style="font-weight: 600; font-size: 1.2rem;"></span>
+                </div>
+                <div
+                    style="display: flex; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; align-items: center;">
+                    <strong
+                        style="width: 120px; color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Email:</strong>
+                    <span th:text="${student.email}" style="color: var(--primary); font-weight: 500;"></span>
+                </div>
+                <div
+                    style="display: flex; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; align-items: center;">
+                    <strong
+                        style="width: 120px; color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Tuổi:</strong>
+                    <span th:text="${student.age}" style="font-weight: 500;"></span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a th:href="@{/students/{id}/edit(id=${student.id})}" class="btn btn-warning">Chỉnh sửa</a>
+
+                <form th:action="@{/students/{id}/delete(id=${student.id})}" method="POST"
+                    onsubmit="return confirm('Bạn có chắc chắn muốn xóa sinh viên này khỏi hệ thống?');"
+                    style="margin: 0;">
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                </form>
+
+                <a href="/students" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

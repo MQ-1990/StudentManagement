@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Danh sách sinh viên (SSR)</h1>
+            <a href="/students/new" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                </svg>
+                Thêm Mới
+            </a>
+        </div>
+
+        <div class="search-bar">
+            <form action="/students" method="GET" style="display: flex; gap: 12px; width: 100%; align-items: center;">
+                <input type="text" name="keyword" class="form-control" placeholder="Nhập tên sinh viên để tìm kiếm..."
+                    th:value="${param.keyword}" />
+                <button type="submit" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                    Tìm kiếm
+                </button>
+                <a href="/students" class="btn btn-secondary">Xóa bộ lọc</a>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ và Tên</th>
+                        <th>Email</th>
+                        <th>Tuổi</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student : ${dsSinhVien}">
+                        <td th:text="${student.id}" th:classappend="${student.age < 18} ? 'text-danger' : ''"></td>
+                        <td th:text="${student.name}" th:classappend="${student.age < 18} ? 'text-danger' : ''"></td>
+                        <td th:text="${student.email}" th:classappend="${student.age < 18} ? 'text-danger' : ''"></td>
+                        <td th:text="${student.age}" th:classappend="${student.age < 18} ? 'text-danger' : ''"></td>
+                        <td>
+                            <a th:href="@{/students/{id}(id=${student.id})}" class="btn btn-sm btn-secondary">Xem chi
+                                tiết</a>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(dsSinhVien)}">
+                        <td colspan="5" class="empty-state">
+                            <div style="font-size: 3rem; margin-bottom: 10px;">🔍</div>
+                            Không có sinh viên nào phù hợp.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${student.id == null ? 'Thêm sinh viên mới' : 'Chỉnh sửa thông tin sinh viên'}">Form Sinh Viên
+    </title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;"
+            th:text="${student.id == null ? 'Thêm sinh viên mới' : 'Chỉnh sửa thông tin sinh viên'}">
+            Thông Tin Sinh Viên</h1>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto; margin-top: 40px;">
+            <form th:action="${action}" th:object="${student}" method="POST">
+
+                <div th:if="${errorMessage != null}" class="error-message">
+                    <span th:text="${errorMessage}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="id">MSSV (Sinh viên ID):</label>
+                    <input type="text" id="id" th:field="*{id}" class="form-control" th:readonly="${isEdit}"
+                        placeholder="Ví dụ: SE150123" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" id="name" th:field="*{name}" class="form-control"
+                        placeholder="Nhập họ và tên đầy đủ" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Địa chỉ Email:</label>
+                    <input type="email" id="email" th:field="*{email}" class="form-control"
+                        placeholder="example@hcmut.edu.vn" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Tuổi:</label>
+                    <input type="number" id="age" th:field="*{age}" class="form-control" placeholder="Nhập vào tuổi..."
+                        required min="0" max="150" />
+                </div>
+
+                <div style="margin-top: 40px; display: flex; gap: 15px; justify-content: flex-end;">
+                    <a href="/students" class="btn btn-secondary">Hủy bỏ</a>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 0;">Lưu thông tin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
