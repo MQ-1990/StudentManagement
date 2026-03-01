@@ -50,11 +50,13 @@ Mở Terminal/Command Prompt tại gốc thư mục chứa code và chạy lện
 - **Thao tác:** Insert một sinh viên với ID = 999 và name = NULL.
 - **Kết quả:** Database CHO PHÉP (Success).
 - **Giải thích:** Do lúc tạo bảng, cột `name` chưa được thiết lập ràng buộc NOT NULL.
-- **Hậu quả khi code Java:** Đây là vấn đề nghiêm trọng!. Khi ứng dụng đọc bản ghi này lên, giá trị `student.getName()` sẽ là `null`. Nếu vòng lặp code không kiểm tra kỹ (ví dụ gọi hàm `student.getName().toUpperCase()`), chương trình sẽ bị Crash ngay lập tức với lỗi rò rỉ bộ nhớ `NullPointerException`. Điều này cho thấy tầm quan trọng của việc thiết lập ràng buộc chặt chẽ dữ liệu rác ngay từ tầng Database.
+- **Hậu quả khi code Java:** Đây là một rủi ro tiềm ẩn nghiêm trọng. Khi ứng dụng đọc bản ghi này lên, giá trị `student.getName()` sẽ là `null`. Nếu vòng lặp code không kiểm tra kỹ (ví dụ gọi hàm `student.getName().toUpperCase()`), chương trình sẽ bị Crash ngay lập tức với lỗi rò rỉ bộ nhớ `NullPointerException`. Điều này cho thấy tầm quan trọng của việc thiết lập ràng buộc chặt chẽ dữ liệu rác ngay từ tầng Database.
 
 ### 4. Cấu hình Hibernate
-- **Giải thích:** Lỗi mất trắng dữ liệu mỗi khi Server khởi động lại là do cấu hình `spring.jpa.hibernate.ddl-auto=create` trong file `application.properties`. Cấu hình `create` sẽ chỉ thị cho thư viện Spring Data JPA (Hibernate) tiến hành thao tác XÓA BỎ (DROP) toàn bộ các bảng cũ đang tồn tại và tạo lại bảng mới tinh sạch sẽ (CREATE) mỗi khi phần mềm được bật. 
-- **Giải pháp:** Trong môi trường làm việc thực tế (Production), kỹ sư thiết lập giá trị này là `update` (chỉ cập nhật cấu trúc schema nếu Entity có thay đổi) hoặc `none` (chặn không cho thao tác ddl-auto rờ vào database) để tránh rủi ro mất mát kho dữ liệu.
+- **Giải thích:** Hiện tượng mất toàn bộ dữ liệu mỗi khi Server khởi động lại xuất phát từ tuỳ chọn cấu hình `spring.jpa.hibernate.ddl-auto=create` trong tệp `application.properties`. Giá trị `create` chỉ thị cho thư viện Spring Data JPA (Hibernate) thực thi lệnh xóa bỏ (DROP) toàn bộ các bảng đang tồn tại và tiến hành tạo mới (CREATE) lại cấu trúc bảng trống mỗi khi ứng dụng khởi chạy.
+- **Giải pháp:** Trong môi trường triển khai thực tế (Production), cần thiết lập thuộc tính này thành `update` (chỉ cập nhật cấu trúc schema nếu Entity có sự thay đổi) hoặc `none` (vô hiệu hóa hoàn toàn cơ chế tự động can thiệp cấu trúc CSDL của Hibernate) nhằm đảm bảo an toàn và tránh rủi ro mất mát dữ liệu hệ thống.
+
+
 
 ---
 
